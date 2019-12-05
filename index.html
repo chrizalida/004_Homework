@@ -1,0 +1,33 @@
+<!-- Доработайте пример, 005_thisExample.html, при наведении мыши к одному из блоков, цвет блока должен измениться, на уникальный, такой которого еще нету у существующих блоков. Также выведите в блок текстовое оповещение о информации цвета, который используется для фона данного блока. При попытке закрыть вкладку, придупредите пользователя о том что информация будет утеряна. Используйте window.onload.  -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+    <link href="index.css" rel="stylesheet">
+    <script src="index.js"></script>
+     <script>
+      window.onload = function () {
+        setInterceptor();
+      }
+    </script>
+</head>
+<body>
+    <div class="divis" id="1" onmouseover = "fillColor(id)" ></div>
+    <div class="divis" id="2" onmouseover = "fillColor(id)"></div>
+    <div class="divis" id="3" onmouseover = "fillColor(id)"></div>
+    <div class="divis" id="4" onmouseover = "fillColor(id)"></div>
+    <div class="divis" id="5" onmouseover = "fillColor(id)"></div>
+    <a href="http://ukr.net/">Уйти</a>
+</body>
+<script>
+   function setInterceptor() {
+      window.onbeforeunload = function() {
+        return "Данные не сохранены. Вы точно хотите покинуть страничку?";
+      }
+      window.onreload  = function(){
+       return "Страничка перегрузится. Вы точно хотите покинуть страничку?"; 
+      }
+   }
+</script>
+</html>
